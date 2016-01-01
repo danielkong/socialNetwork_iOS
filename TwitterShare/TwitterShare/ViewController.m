@@ -104,7 +104,7 @@
     UIAlertAction *moreAction = [UIAlertAction actionWithTitle:@"moreAction" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
         UIImage *img = [UIImage imageNamed:@"test"];
 //        NSURL *website = [NSURL URLWithString:@"http://www.apple.com"];
-        UIActivityViewController *moreActivityVC = [[UIActivityViewController alloc] initWithActivityItems:@[self.tweetTextView, img] applicationActivities:nil];
+        UIActivityViewController *moreActivityVC = [[UIActivityViewController alloc] initWithActivityItems:@[self.tweetTextView.text] applicationActivities:nil];
         [self presentViewController:moreActivityVC animated:YES completion:nil];
     }];
 
