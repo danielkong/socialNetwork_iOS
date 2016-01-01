@@ -62,10 +62,6 @@
 //    UIAlertControllerStyleAlert
     
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil];
-    ////
-//        UIAlertController *actionController2 = [UIAlertController alertControllerWithTitle:@"Title2" message:@"Tweet your note2" preferredStyle:UIAlertControllerStyleAlert];
-//        [self presentViewController:actionController2 animated:YES completion:nil];
-    ////
     
     UIAlertAction *tweetAction = [UIAlertAction actionWithTitle:@"Tweet" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action){
         // dismiss first alertController, and show second alertController
@@ -89,37 +85,32 @@
         
         }
     }];
-//  UIAlertAction:
-//    UIAlertActionStyleDefault   // blue xi
-//    UIAlertActionStyleCancel    // blue bold
-//    UIAlertActionStyleDestructive // red xi
-    
     
     UIAlertAction *facebookAction = [UIAlertAction actionWithTitle:@"Post to Facebook" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
-        // dismiss first alertController, and show second alertController
-        //        UIAlertController *actionController2 = [UIAlertController alertControllerWithTitle:@"Title2" message:@"Tweet your note2" preferredStyle:UIAlertControllerStyleAlert];
-        //        [self presentViewController:actionController2 animated:YES completion:nil];
-        
+
         if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
             // tweet out the tweet
-            SLComposeViewController *facebookVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+            SLComposeViewController *facebookVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
             
-            if ([self.tweetTextView.text length] < 140) {
-                [facebookVC setInitialText:self.tweetTextView.text];
-            } else {
-                NSString *shortText = [self.tweetTextView.text substringToIndex:140];
-                [facebookVC setInitialText:shortText];
-            }
+            [facebookVC setInitialText:self.tweetTextView.text];
             [self presentViewController:facebookVC animated:YES completion:nil];
         } else {
             // raise some kind of objection
             [self showAlertMessage:@"You are not signed in to Facebook"];
-            
         }
+        
+    }];
+    
+    UIAlertAction *moreAction = [UIAlertAction actionWithTitle:@"moreAction" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        UIImage *img = [UIImage imageNamed:@"test"];
+//        NSURL *website = [NSURL URLWithString:@"http://www.apple.com"];
+        UIActivityViewController *moreActivityVC = [[UIActivityViewController alloc] initWithActivityItems:@[self.tweetTextView, img] applicationActivities:nil];
+        [self presentViewController:moreActivityVC animated:YES completion:nil];
     }];
 
     [actionController addAction:tweetAction];
     [actionController addAction:facebookAction];
+    [actionController addAction:moreAction];
     [actionController addAction:cancelAction];
 
     [self presentViewController:actionController animated:YES completion:nil];
@@ -135,7 +126,5 @@
     self.tweetTextView.layer.borderWidth = 2.0;
     
 }
-
-// social.framework and building a UIAlerrtController
 
 @end
