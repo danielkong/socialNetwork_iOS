@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4556D1D51C36121A009AA8B6 /* TwitterShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4556D1D51C36121A009AA8B6 /* SocialShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4556D1D91C36121A009AA8B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4556D1DB1C36121A009AA8B6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4556D1DC1C36121A009AA8B6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 		4556D1D61C36121A009AA8B6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4556D1D51C36121A009AA8B6 /* TwitterShare.app */,
+				4556D1D51C36121A009AA8B6 /* SocialShare.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,9 +86,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4556D1D41C36121A009AA8B6 /* TwitterShare */ = {
+		4556D1D41C36121A009AA8B6 /* SocialShare */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4556D1EC1C36121B009AA8B6 /* Build configuration list for PBXNativeTarget "TwitterShare" */;
+			buildConfigurationList = 4556D1EC1C36121B009AA8B6 /* Build configuration list for PBXNativeTarget "SocialShare" */;
 			buildPhases = (
 				4556D1D11C36121A009AA8B6 /* Sources */,
 				4556D1D21C36121A009AA8B6 /* Frameworks */,
@@ -98,9 +98,9 @@
 			);
 			dependencies = (
 			);
-			name = TwitterShare;
+			name = SocialShare;
 			productName = TwitterShare;
-			productReference = 4556D1D51C36121A009AA8B6 /* TwitterShare.app */;
+			productReference = 4556D1D51C36121A009AA8B6 /* SocialShare.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -117,7 +117,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4556D1D01C36121A009AA8B6 /* Build configuration list for PBXProject "TwitterShare" */;
+			buildConfigurationList = 4556D1D01C36121A009AA8B6 /* Build configuration list for PBXProject "SocialShare" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -130,7 +130,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4556D1D41C36121A009AA8B6 /* TwitterShare */,
+				4556D1D41C36121A009AA8B6 /* SocialShare */,
 			);
 		};
 /* End PBXProject section */
@@ -270,7 +270,7 @@
 				INFOPLIST_FILE = TwitterShare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DK.TwitterShare;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SocialShare;
 			};
 			name = Debug;
 		};
@@ -281,14 +281,14 @@
 				INFOPLIST_FILE = TwitterShare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DK.TwitterShare;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SocialShare;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4556D1D01C36121A009AA8B6 /* Build configuration list for PBXProject "TwitterShare" */ = {
+		4556D1D01C36121A009AA8B6 /* Build configuration list for PBXProject "SocialShare" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4556D1EA1C36121B009AA8B6 /* Debug */,
@@ -297,13 +297,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4556D1EC1C36121B009AA8B6 /* Build configuration list for PBXNativeTarget "TwitterShare" */ = {
+		4556D1EC1C36121B009AA8B6 /* Build configuration list for PBXNativeTarget "SocialShare" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4556D1ED1C36121B009AA8B6 /* Debug */,
 				4556D1EE1C36121B009AA8B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

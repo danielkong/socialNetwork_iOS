@@ -43,7 +43,7 @@
 
 - (void)showAlertMessage:(NSString *)myMessage {
 
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"twitterShare" message:myMessage preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Social Share" message:myMessage preferredStyle:UIAlertControllerStyleAlert];
     [alertController addAction:[UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault handler:nil]];
     [self presentViewController:alertController animated:YES completion:nil];
 
@@ -94,8 +94,33 @@
 //    UIAlertActionStyleCancel    // blue bold
 //    UIAlertActionStyleDestructive // red xi
     
-    [actionController addAction:cancelAction];
+    
+    UIAlertAction *facebookAction = [UIAlertAction actionWithTitle:@"Post to Facebook" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        // dismiss first alertController, and show second alertController
+        //        UIAlertController *actionController2 = [UIAlertController alertControllerWithTitle:@"Title2" message:@"Tweet your note2" preferredStyle:UIAlertControllerStyleAlert];
+        //        [self presentViewController:actionController2 animated:YES completion:nil];
+        
+        if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+            // tweet out the tweet
+            SLComposeViewController *facebookVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+            
+            if ([self.tweetTextView.text length] < 140) {
+                [facebookVC setInitialText:self.tweetTextView.text];
+            } else {
+                NSString *shortText = [self.tweetTextView.text substringToIndex:140];
+                [facebookVC setInitialText:shortText];
+            }
+            [self presentViewController:facebookVC animated:YES completion:nil];
+        } else {
+            // raise some kind of objection
+            [self showAlertMessage:@"You are not signed in to Facebook"];
+            
+        }
+    }];
+
     [actionController addAction:tweetAction];
+    [actionController addAction:facebookAction];
+    [actionController addAction:cancelAction];
 
     [self presentViewController:actionController animated:YES completion:nil];
 
