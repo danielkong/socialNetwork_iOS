@@ -1,0 +1,12 @@
+PODS:
+  - NXOAuth2Client (1.2.8)
+
+DEPENDENCIES:
+  - NXOAuth2Client (~> 1.2.8)
+
+SPEC CHECKSUMS:
+  NXOAuth2Client: 98c4d4c594edd2b289cfc34a8928653e1dab7adf
+
+PODFILE CHECKSUM: a80d1a6efbe96438edb14dce7a9f36ff00a058c5
+
+COCOAPODS: 1.0.0.beta.2

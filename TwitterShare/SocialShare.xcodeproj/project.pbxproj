@@ -15,6 +15,7 @@
 		4556D1E51C36121B009AA8B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4556D1E41C36121B009AA8B6 /* Assets.xcassets */; };
 		4556D1E81C36121B009AA8B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4556D1E61C36121B009AA8B6 /* LaunchScreen.storyboard */; };
 		4556D1F01C361A29009AA8B6 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4556D1EF1C361A29009AA8B6 /* Social.framework */; };
+		8544303C625D5A33537F2918 /* libPods-SocialShare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73A57006AFF13B4210CD41F7 /* libPods-SocialShare.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,9 @@
 		4556D1E71C36121B009AA8B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4556D1E91C36121B009AA8B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4556D1EF1C361A29009AA8B6 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		6B0DD74A26EEB85D8D2EC825 /* Pods-SocialShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialShare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialShare/Pods-SocialShare.debug.xcconfig"; sourceTree = "<group>"; };
+		73A57006AFF13B4210CD41F7 /* libPods-SocialShare.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SocialShare.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		813F95EC6F1FF336D762913A /* Pods-SocialShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialShare.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialShare/Pods-SocialShare.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,18 +42,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				4556D1F01C361A29009AA8B6 /* Social.framework in Frameworks */,
+				8544303C625D5A33537F2918 /* libPods-SocialShare.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3064EB8EBAA3B9738766691A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				73A57006AFF13B4210CD41F7 /* libPods-SocialShare.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4556D1CC1C36121A009AA8B6 = {
 			isa = PBXGroup;
 			children = (
 				4556D1EF1C361A29009AA8B6 /* Social.framework */,
 				4556D1D71C36121A009AA8B6 /* SocialShare */,
 				4556D1D61C36121A009AA8B6 /* Products */,
+				EE922940644977C873D60555 /* Pods */,
+				3064EB8EBAA3B9738766691A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +102,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		EE922940644977C873D60555 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6B0DD74A26EEB85D8D2EC825 /* Pods-SocialShare.debug.xcconfig */,
+				813F95EC6F1FF336D762913A /* Pods-SocialShare.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -94,9 +118,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4556D1EC1C36121B009AA8B6 /* Build configuration list for PBXNativeTarget "SocialShare" */;
 			buildPhases = (
+				1EC93C2DF6FF6DCC8FABD9F8 /* Check Pods Manifest.lock */,
 				4556D1D11C36121A009AA8B6 /* Sources */,
 				4556D1D21C36121A009AA8B6 /* Frameworks */,
 				4556D1D31C36121A009AA8B6 /* Resources */,
+				B3EBAE6774C454D898C46A7C /* Embed Pods Frameworks */,
+				23576AD1EB095A7AACC16C3F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,6 +179,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1EC93C2DF6FF6DCC8FABD9F8 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		23576AD1EB095A7AACC16C3F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SocialShare/Pods-SocialShare-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3EBAE6774C454D898C46A7C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SocialShare/Pods-SocialShare-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4556D1D11C36121A009AA8B6 /* Sources */ = {
@@ -270,6 +345,7 @@
 		};
 		4556D1ED1C36121B009AA8B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B0DD74A26EEB85D8D2EC825 /* Pods-SocialShare.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TwitterShare/Info.plist;
@@ -281,6 +357,7 @@
 		};
 		4556D1EE1C36121B009AA8B6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 813F95EC6F1FF336D762913A /* Pods-SocialShare.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TwitterShare/Info.plist;
