@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JU8-fE-6eE">
+                                <rect key="frame" x="0.0" y="20" width="600" height="193.5"/>
+                            </mapView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hnc-UG-Zfw">
+                                <rect key="frame" x="0.0" y="406.5" width="600" height="193.5"/>
+                                <connections>
+                                    <segue destination="Get-JM-ONz" kind="embed" id="u7C-dy-8rK"/>
+                                </connections>
+                            </containerView>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IJc-dh-gGg">
+                                <rect key="frame" x="0.0" y="213" width="600" height="193"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IJc-dh-gGg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="6nO-X8-UN6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IJc-dh-gGg" secondAttribute="trailing" constant="-20" id="8ru-dw-ffG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IJc-dh-gGg" secondAttribute="trailing" constant="-20" id="AF7-tS-vKC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JU8-fE-6eE" secondAttribute="trailing" constant="-20" id="Gpv-NV-Mnx"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hnc-UG-Zfw" secondAttribute="bottom" id="HcC-aB-c9u"/>
+                            <constraint firstItem="JU8-fE-6eE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Kf4-Fu-ltw"/>
+                            <constraint firstItem="JU8-fE-6eE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="QSb-bY-3op"/>
+                            <constraint firstItem="IJc-dh-gGg" firstAttribute="top" secondItem="JU8-fE-6eE" secondAttribute="bottom" id="SAK-XE-dDc"/>
+                            <constraint firstItem="IJc-dh-gGg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="WIO-Na-N0P"/>
+                            <constraint firstItem="hnc-UG-Zfw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Z3d-bn-eWE"/>
+                            <constraint firstItem="IJc-dh-gGg" firstAttribute="top" secondItem="JU8-fE-6eE" secondAttribute="bottom" id="az9-FN-i3K"/>
+                            <constraint firstItem="IJc-dh-gGg" firstAttribute="height" secondItem="JU8-fE-6eE" secondAttribute="height" id="eYb-17-YGx"/>
+                            <constraint firstItem="hnc-UG-Zfw" firstAttribute="height" secondItem="JU8-fE-6eE" secondAttribute="height" id="kil-oX-hX9"/>
+                            <constraint firstItem="hnc-UG-Zfw" firstAttribute="top" secondItem="IJc-dh-gGg" secondAttribute="bottom" id="kwl-Yd-Dkt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hnc-UG-Zfw" secondAttribute="trailing" constant="-20" id="nDB-V0-EL7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hnc-UG-Zfw" secondAttribute="trailing" constant="-20" id="pgM-uF-n4T"/>
+                            <constraint firstItem="hnc-UG-Zfw" firstAttribute="top" secondItem="IJc-dh-gGg" secondAttribute="bottom" id="xFl-r3-FSs"/>
+                            <constraint firstItem="hnc-UG-Zfw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="yMh-bY-3cg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="JU8-fE-6eE" id="8l1-t3-IX7"/>
+                        <outlet property="webView" destination="IJc-dh-gGg" id="rfA-pZ-eMo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="PLg-1s-eOc">
+            <objects>
+                <viewController id="Get-JM-ONz" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hgi-3b-Bzi"/>
+                        <viewControllerLayoutGuide type="bottom" id="NkD-mf-ARr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eRF-4O-vxU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="193.5"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4Yi-9D-aWM">
+                                <rect key="frame" x="20" y="0.0" width="280" height="193.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FKx-Lq-v3g">
+                                <rect key="frame" x="300" y="0.0" width="280" height="193.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FKx-Lq-v3g" firstAttribute="top" secondItem="eRF-4O-vxU" secondAttribute="topMargin" id="EUd-qt-hNI"/>
+                            <constraint firstItem="4Yi-9D-aWM" firstAttribute="leading" secondItem="eRF-4O-vxU" secondAttribute="leadingMargin" id="QEw-sb-1wr"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="4Yi-9D-aWM" secondAttribute="bottom" id="c2n-ae-Sdp"/>
+                            <constraint firstItem="FKx-Lq-v3g" firstAttribute="leading" secondItem="4Yi-9D-aWM" secondAttribute="trailing" id="nfD-i9-N6j"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FKx-Lq-v3g" secondAttribute="trailing" id="ol2-aQ-Dcx"/>
+                            <constraint firstItem="FKx-Lq-v3g" firstAttribute="width" secondItem="4Yi-9D-aWM" secondAttribute="width" id="rXD-Lo-4Ui"/>
+                            <constraint firstItem="FKx-Lq-v3g" firstAttribute="leading" secondItem="4Yi-9D-aWM" secondAttribute="trailing" id="sFJ-cx-Q01"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="FKx-Lq-v3g" secondAttribute="bottom" id="vZD-TF-9K0"/>
+                            <constraint firstItem="4Yi-9D-aWM" firstAttribute="top" secondItem="eRF-4O-vxU" secondAttribute="topMargin" id="vhl-XR-MNM"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FtV-ni-q5F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
