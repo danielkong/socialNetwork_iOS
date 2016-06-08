@@ -14,3 +14,11 @@ DONE:
   2. UIAlertController & UIAlertAction
   3. UIActivityViewController
   4. CALayer
+  
+  > **Adaptive View**
+  
+  > **MapKit**
+  
+  > **Scroll View Demo**
+  
+  > **TODO List with tableView**
